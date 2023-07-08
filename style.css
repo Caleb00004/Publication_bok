@@ -15,6 +15,67 @@ main {
     padding-right: 4%;
 }
 
+/* MODAL STYLES */
+.modal-container {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.75); 
+    display: flex;
+    transition: 0.4s;
+}
+
+.close_modal {
+    cursor: pointer;
+    position: absolute;
+    top: 0.5em;
+    right: 1em;
+    z-index: 2;
+    background-color: black;
+    /* width: 2em; */
+    height: 1.5em;
+    color: white;
+    padding: 0.2em 0.6em 0.1em 0.6em;
+    border-radius: 50%;
+}
+
+.modal {
+    background-color: #F4EEDB;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgb(184, 183, 183);
+    z-index: 9;
+    margin: auto;
+    width: 44em;
+    padding: 4em 2em 2em 2em;
+    border-radius: 10px;
+    display: flex;
+    gap: 1.5em;
+    transition: 0.4s;
+}
+
+.modal_img_container {
+    margin-top: 3.5em;
+    background-color: #0A4988;
+    border-radius: 20px;
+    height: 15em;
+}
+
+.modal_img_container > img {
+    position: relative;
+    bottom: .8em;
+    left: 0.8em;
+    height: 15em;
+}
+
+.modal_texts > h4{
+    margin-bottom: 1em;
+}
+
 /* TOP HALF */
 .top_half {
     display: flex;
@@ -59,7 +120,6 @@ main {
     position: relative;
     bottom: 0.8em;
     left: 0.8em;
-    /* height: 25em; */
     width: clamp(15em, 18vw, 19em);
 }
 
@@ -89,7 +149,11 @@ main {
     gap: 1em;
 }
 
-.btn_container > button{
+.btn_container > a {
+    text-decoration: none;
+}
+
+.btn_container > a > button{
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -102,19 +166,19 @@ main {
     transition: 0.3s;
 }
 
-.btn_container > button > .btn_icon {
+.btn_container > a > button > .btn_icon {
     transition: 0.3s;
     background-color: #0A4988;
     margin-left: 0.3em;
     border-radius: 50%;
 }
 
-.btn_container > button:hover {
+.btn_container > a > button:hover {
     background-color: #0A4988;
     color: white;
 }
 
-.btn_container > button:hover .btn_icon {
+.btn_container > a > button:hover .btn_icon {
     transform: translate(7px);
 }
 
@@ -189,6 +253,9 @@ hr {
 
 /* Tab View */
 @media screen and (max-width: 925px) {
+    .modal {
+        width: 80%;
+    }
     .top_half {
         gap: 1em;
     }
@@ -225,6 +292,34 @@ hr {
 }
 
 @media screen and (max-width: 752px) {
+
+    .modal_img_container {
+        height: 12em;
+        margin-right: auto;
+        margin-top: 1em;
+    }
+
+    .modal_img_container > img {
+        position: relative;
+        bottom: .8em;
+        left: 0.8em;
+        height: 12em;
+    }
+
+    .modal_texts > p {
+        font-size: 0.9em;
+    }
+
+    .modal_texts > h2 {
+        font-size: 1.3em;
+    }
+
+    .modal {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 3em 1.5em 1em 1.5em;
+    }
+
     .lines_container {
         display: none;
     }
@@ -244,14 +339,24 @@ hr {
     .bottom_half h3 {
         margin-bottom: 0.5em;
     }
-    .btn_container > button {
+    .btn_container > a > button {
         padding: 0.4em 1.5em 0.4em 1.5em;
         font-size: 0.8em;
+    }
+    .btn_icon {
+        width: 1.5em;
     }
     .author_item {
         border: 1px solid black;
         border-radius: 5px;
         display: flex;
+        flex-direction: column;
+    }
+    .author_item > img {
+        padding: 0;
+        padding-top: 1em;
+        width: 100%;
+        height: 18em;
     }
     .author_texts {
        padding: 0.5em 1em 0.5em 1em;
