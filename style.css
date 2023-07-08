@@ -1,0 +1,264 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #F4EEDB;
+    font-family: Calibri;
+}
+
+main {
+    padding-top: 5em;
+    padding-bottom: 4em;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+/* TOP HALF */
+.top_half {
+    display: flex;
+    gap: 4%;
+    align-items: flex-start;
+}
+
+.lines_container > svg {
+    background-color: #0A4988;
+}
+.lines_container {
+    display: flex;
+    justify-content: space-between;
+    width: 5em;
+    align-items: center;
+}
+
+.lines_container > .small_line {
+    height: 5em;
+}
+
+.lines_container > .medium_line {
+    height: 10em;
+    width: 0.15em;
+}
+
+.lines_container > .big_line {
+    height: 15em;
+}
+
+.lines_container > .biggest_line {
+    height: 20em;
+    width: 0.15em;
+}
+
+.img_container {
+    background-color: #0A4988;
+    border-radius: 20px;
+}
+
+.img_container > img {
+    position: relative;
+    bottom: 0.8em;
+    left: 0.8em;
+    /* height: 25em; */
+    width: clamp(15em, 18vw, 19em);
+}
+
+.hero_texts > h4 {
+    color: #0A4988;
+    font-size: clamp(1.7em, 2.1vw, 2.1em);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.hero_texts > h1 {
+    font-size: clamp(2.4em, 3.2vw, 3.1em);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 93.5%;
+    padding-bottom: 0.3em;
+}
+
+.hero_texts > p {
+    padding-bottom: 1em;
+    font-size: clamp(0.9em, 1.1vw, 1.1em);
+}
+
+.btn_container {
+    display: flex;
+    gap: 1em;
+}
+
+.btn_container > button{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0.5em 3em 0.5em 3em;
+    border: 1px solid #0A4988;
+    background-color: white;
+    color: #0A4988;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn_container > button > .btn_icon {
+    transition: 0.3s;
+    background-color: #0A4988;
+    margin-left: 0.3em;
+    border-radius: 50%;
+}
+
+.btn_container > button:hover {
+    background-color: #0A4988;
+    color: white;
+}
+
+.btn_container > button:hover .btn_icon {
+    transform: translate(7px);
+}
+
+
+hr {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+/* BOTTOM HALF */
+.bottom_half_imgCont {
+    display: none;
+}
+
+.bottom_details_cont {
+    display: flex;
+    gap: 5%;
+}
+
+.bottom_half h3 {
+    color: #0A4988;
+    margin-bottom: 1em;
+    font-size: 1.6em;
+    font-weight: 500;
+}
+
+.author_container {
+    flex: 1.4
+}
+
+.author_item {
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+}
+
+.author_texts {
+    padding: 1em 2em 0.5em 1.3em;
+}
+.author_texts > p {
+    padding-bottom: 0.7em;
+}
+.author_texts > h4 {
+    font-size: 1.3em;
+}
+
+.author_item > img {
+    padding: 0.5em;
+    background-color: #0A4988;
+}
+
+.reviews_container {
+    flex: 1;
+}
+
+.reviews_item {
+    cursor: pointer;
+    /* margin-top: 1em; */
+    margin-bottom: 1em;
+    border: 1px solid black;
+    border-left: 4px solid #0A4988;
+    border-radius: 5px;
+    padding-left: 0.5em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    transition: 0.3s;
+}
+
+.reviews_item:hover {
+    scale: 1.05;
+}
+
+/* Tab View */
+@media screen and (max-width: 925px) {
+    .top_half {
+        gap: 1em;
+    }
+
+    main {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    .top_half_imgCont {
+        display: none;
+    }
+
+    .bottom_half {
+        display: flex;
+        gap: 2em;
+    }
+    
+    .bottom_half p {
+        font-size: 0.85em;
+    }
+    .bottom_half_imgCont {
+        display: inline-block;
+        margin-top: 4em;
+    }
+
+    .bottom_details_cont {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+    .img_container > img {
+        width: 12em;
+    }
+}
+
+@media screen and (max-width: 752px) {
+    .lines_container {
+        display: none;
+    }
+    .bottom_half_imgCont {
+        display: none;
+    }
+}
+
+/* Mobile View */
+@media screen and (max-width: 532px) {
+    main {
+        padding: 2em 1em 2em 1em;
+    }
+    .hero_texts > h1 {
+        font-size: 2em;
+    }
+    .bottom_half h3 {
+        margin-bottom: 0.5em;
+    }
+    .btn_container > button {
+        padding: 0.4em 1.5em 0.4em 1.5em;
+        font-size: 0.8em;
+    }
+    .author_item {
+        border: 1px solid black;
+        border-radius: 5px;
+        display: flex;
+    }
+    .author_texts {
+       padding: 0.5em 1em 0.5em 1em;
+    }
+    .author_texts > p {
+        font-size: 0.8em;
+    }
+}
+
+
