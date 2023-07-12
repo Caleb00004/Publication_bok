@@ -15,6 +15,13 @@ main {
     padding-right: 4%;
 }
 
+.horizontal_image {
+    margin-top: 3em;
+    margin-bottom: 3em;
+    width: 100%;
+}
+
+
 /* MODAL STYLES */
 .modal-container {
     opacity: 0;
@@ -72,7 +79,7 @@ main {
     height: 15em;
 }
 
-.modal_texts > h4{
+.modal_texts > h4 {
     margin-bottom: 1em;
 }
 
@@ -83,9 +90,24 @@ main {
     align-items: flex-start;
 }
 
-.lines_container > svg {
-    background-color: #0A4988;
+.lines_container {
+    /* background-color: red; */
+    margin-top: 1em;
+    margin-top: 4em;
 }
+
+.lines_container > svg {
+    scale: 0.8;
+}
+
+.mid_line {
+    transform: translateY(-3em);
+}
+
+.right_line {
+    transform: translateY(-6em);
+}
+
 .lines_container {
     display: flex;
     justify-content: space-between;
@@ -125,9 +147,10 @@ main {
 
 .hero_texts > h4 {
     color: #0A4988;
-    font-size: clamp(1.7em, 2.1vw, 2.1em);
+    font-size: clamp(1.9em, 2.5vw, 2.3em);
+    margin-bottom: 0.6em;
+    font-weight: bolder;
     font-style: normal;
-    font-weight: 400;
     line-height: normal;
 }
 
@@ -210,24 +233,41 @@ hr {
 }
 
 .author_item {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 5px;
     display: flex;
+    align-items: center;
 }
 
 .author_texts {
     padding: 1em 2em 0.5em 1.3em;
 }
+
+.author_texts > h4 > img {
+    margin-left: 0.2em;
+}
 .author_texts > p {
     padding-bottom: 0.7em;
 }
 .author_texts > h4 {
+    display: flex;
+    align-items: center;
     font-size: 1.3em;
 }
 
-.author_item > img {
-    padding: 0.5em;
+.author_image_container {
+    padding: 0em;
     background-color: #0A4988;
+    /* position: relative; */
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 11em;
+}
+
+.author_image_container img {
+    position: relative;
+    bottom: 0.5em;
+    left: 0.5em;
 }
 
 .reviews_container {
@@ -236,9 +276,7 @@ hr {
 
 .reviews_item {
     cursor: pointer;
-    /* margin-top: 1em; */
     margin-bottom: 1em;
-    border: 1px solid black;
     border-left: 4px solid #0A4988;
     border-radius: 5px;
     padding-left: 0.5em;
@@ -292,7 +330,10 @@ hr {
 }
 
 @media screen and (max-width: 752px) {
-
+    .horizontal_image {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
     .modal_img_container {
         height: 12em;
         margin-right: auto;
@@ -333,6 +374,12 @@ hr {
     main {
         padding: 2em 1em 2em 1em;
     }
+    .horizontal_image {
+        display: none;
+    }
+    .bottom_half {
+        margin-top: 3em;
+    }
     .hero_texts > h1 {
         font-size: 2em;
     }
@@ -347,10 +394,7 @@ hr {
         width: 1.5em;
     }
     .author_item {
-        border: 1px solid black;
         border-radius: 5px;
-        display: flex;
-        flex-direction: column;
     }
     .author_item > img {
         padding: 0;
@@ -359,7 +403,7 @@ hr {
         height: 18em;
     }
     .author_texts {
-       padding: 0.5em 1em 0.5em 1em;
+       padding: 0.5em 0.5em 0.5em 1em;
     }
     .author_texts > p {
         font-size: 0.8em;
